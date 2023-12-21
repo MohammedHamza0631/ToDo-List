@@ -19,10 +19,19 @@
           <% tasklist.forEach(task => { %>
           <li>
             <label>
-              <input type="checkbox" name="taskToDelete" class="strikethrough checkbox-style" value="<%= task %>">
-              <span>  <%= task %></span>
-           </label>
-            
+              <input
+                type="checkbox"
+                name="taskToDelete"
+                class="strikethrough checkbox-style"
+                value="<%= task %>"
+              />
+              <span> <%= task %></span>
+            </label>
+
+            <form action="/delete" method="POST" style="display: inline">
+              <input type="hidden" name="taskToDelete" value="<%= task %>" />
+              <button type="submit">Delete</button>
+            </form>
             
           </li>
           <% }) %>

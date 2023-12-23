@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/add", (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     tasks.push(req.body["task"]);
     res.redirect("/");
 
@@ -28,7 +28,7 @@ app.post("/add", (req, res) => {
         
 app.post("/delete", (req, res) => {
     const taskToDelete = req.body["taskToDelete"];
-    console.log(taskToDelete);
+    // console.log(taskToDelete);
     
     tasks = tasks.filter(task => task !== taskToDelete);
     
